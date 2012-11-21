@@ -6,7 +6,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-import registerOffice.businessObjects.persons.Person;
+import Shop.Office.Persons.Person;
 
 public class HibernatePersonManager implements ManagerInterface<Person>{
 
