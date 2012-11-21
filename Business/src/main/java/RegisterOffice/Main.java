@@ -6,12 +6,13 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+import Shop.Office.Cars.Car;
+
+import Shop.Office.Cars.PersonCar;
+
+import Shop.Office.Persons.*;
+
 import registerOffice.management.HibernatePersonManager;
-
-import Shop.Office.Persons.Person;
-
-
-
 
 public class Main {
 

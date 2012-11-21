@@ -1,5 +1,4 @@
 package Shop.Office.Persons;
-
 import java.util.*;
 
 import javax.persistence.Column;
@@ -14,7 +13,7 @@ import javax.persistence.Transient;
 import org.hibernate.annotations.NamedQueries;
 import org.hibernate.annotations.NamedQuery;
 
-import registerOffice.businessObjects.cars.*;
+import Shop.Office.Cars.*;
 
 @NamedQueries({
 		@NamedQuery(
@@ -67,7 +66,7 @@ public class Person {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Collection<Shop.Office.Cars.Car> getCars() {
+	public Collection<Car> getCars() {
 		return cars;
 	}
 	public void setCars(List<Car> cars) {
