@@ -30,7 +30,10 @@ import Shop.Office.Cars.*;
 		
 @Entity
 @Table(name="OSOBY")
-public class Person {
+
+
+	
+	public class Person {
 
 	@Id
 	@GeneratedValue

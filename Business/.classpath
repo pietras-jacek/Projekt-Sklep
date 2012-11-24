@@ -23,7 +23,7 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/home/student/.m2/repository/org/hibernate/hibernate-core/3.6.6.Final/hibernate-core-3.6.6.Final.jar">
+	<classpathentry kind="lib" path="C:/Users/Dom/.m2/repository/org/hibernate/hibernate-core/3.6.6.Final/hibernate-core-3.6.6.Final.jar">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
 			<attribute name="maven.groupId" value="org.hibernate"/>
@@ -32,7 +32,7 @@
 			<attribute name="maven.scope" value="compile"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/home/student/.m2/repository/org/hibernate/ejb3-persistence/1.0.2.GA/ejb3-persistence-1.0.2.GA.jar">
+	<classpathentry kind="lib" path="C:/Users/Dom/.m2/repository/org/hibernate/ejb3-persistence/1.0.2.GA/ejb3-persistence-1.0.2.GA.jar">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
 			<attribute name="maven.groupId" value="org.hibernate"/>
