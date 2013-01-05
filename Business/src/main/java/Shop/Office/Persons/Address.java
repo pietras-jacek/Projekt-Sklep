@@ -6,15 +6,17 @@ public class Address {
 	  private String City;
 	  private String Street;
 	  private String PostCode;
+	  
 
+	  
 	  public Address(String newCity, String newStreet, String newPostCode)
 	    {
 	      this.City = newCity;
 	      this.Street = newStreet;
 	      this.PostCode = newPostCode;
 	    }
-	 
-	//setters
+	  
+	  //setters
       public void setCity (String newCity)
       {
               City = newCity;

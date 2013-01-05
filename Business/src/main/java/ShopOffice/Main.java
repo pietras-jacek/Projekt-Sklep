@@ -41,15 +41,15 @@ public class Main {
 //		session.getTransaction().commit();
 //		session.close();
 		
-		HibernatePersonManager mgr = new HibernatePersonManager(session);
-		mgr.save(new Person("Adam","1234"));
-		mgr.save(new Person("Michal","1234"));
-		mgr.save(new Person("Paweł","1234"));
-		Shop.Office.Persons.Person person =new Person("Adam");
+		HibernatePersonManager worker = new HibernatePersonManager(session);
+		worker.save(new Person("Marek","1234"));
+		worker.save(new Person("Darek","1234"));
+		worker.save(new Person("Aleksander","1234"));
+		Shop.Office.Persons.Person person =new Person("Marek");
 		person.setId(10);
-		mgr.delete(person);
+		worker.delete(person);
 		//session.getTransaction().commit();
-		for(Person p: mgr.getAll())
+		for(Person p: worker.getAll())
 		{
 			System.out.println(p.getName());
 		}
