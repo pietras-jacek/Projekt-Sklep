@@ -10,61 +10,55 @@ import Shop.Office.Persons.Person;
 
 public class HibernatePersonManager implements ManagerInterface<Person>{
 
-Session session;
-
-public HibernatePersonManager(Session session)
-{
-	this.session=session;
-}
-
-public Person get(int id) {
-
-	List<Person> result = 
-			session.getNamedQuery("Person.id").setInteger("id", id).list();
-	if(result.size()==0)
-		return null;
-
-	Person returnValue = new Person(
-			result.get(0).getName(), 
-			result.get(0).getPesel(),
-			result.get(0).getAddress());
-	returnValue.setId(result.get(0).getId());
-	return returnValue;
-}
-
-public List<Person> getAll() {
-	List<Person> result =
-			session.getNamedQuery("Person.all").list();
-	return result;
-}
-
-public boolean save(Person obj) {
-
-	try{
-		session.beginTransaction();
-		session.persist(obj);
-		session.getTransaction().commit();
-		return true;
-	}catch(Exception ex){}
-
-	return false;
-}
-
-public boolean delete(Person obj) {
-
-	try
+	private Session session;
+	
+	public HibernatePersonManager( Session session)
 	{
-		session.beginTransaction();
-		session.getNamedQuery("Person.delete")
-		.setInteger("id", obj.getId())
-		.executeUpdate();
+		this.session = session;
+	}
+	
+	public Person get(int id) {
+		
+		List<Person> result = this.session.getNamedQuery("allPersonsById")
+				.setInteger("Id",id).list();
+		
+		return result.get(0);
+	}
 
-		session.getTransaction().commit();
-		return true;
-	}catch(Exception ex)
-	{}
+	
+	public List<Person> getAll() {
+		
+		return (List<Person>)this.session.getNamedQuery("allPersons").list();
+	}
 
-	return false;
-}
+	
+	public boolean save(Person obj) {
+		try{
+			this.session.beginTransaction();
+			this.session.save(obj);
+			
+			session.beginTransaction().commit();
+			return true;
+		}catch(Exception ex)
+		{
+			return false;
+		}
+	}
+
+	
+	public boolean delete(Person obj) {
+		try{
+			this.session.beginTransaction();
+			this.session.getNamedQuery("deleteFromPerson")
+			.setInteger("id", obj.getId())
+			.executeUpdate();
+			this.session.getTransaction().commit();
+			return true;
+		}
+		catch(Exception ex)
+		{
+			return false;
+		}
+	}
 
 }

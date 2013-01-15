@@ -1,0 +1,5 @@
+Projekt został zrobiony na podstawie programu omawianego na zajęciach.
+RegisterOffice. Nazwa mojego projektu: Business. 
+Celem mojego programu jest rejestracja pracowników i ich samochodów.
+Pobiera te listy z bazy danych.
+Umożliwia dodawanie i usuwanie pracowników i samochodów. 

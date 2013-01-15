@@ -9,7 +9,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import registerOffice.management.ManagerInterface;
+import Shop.Office.Administration.ManagerInterface;
 
 import Shop.Office.Persons.Person;
 

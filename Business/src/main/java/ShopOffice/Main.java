@@ -6,6 +6,8 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+import Shop.Office.Persons.Person;
+
 import Shop.Office.Cars.Car;
 import Shop.Office.Cars.PersonCar;
 import Shop.Office.Persons.*;
@@ -41,15 +43,15 @@ public class Main {
 //		session.getTransaction().commit();
 //		session.close();
 		
-		HibernatePersonManager worker = new HibernatePersonManager(session);
-		worker.save(new Person("Marek","1234"));
-		worker.save(new Person("Darek","1234"));
-		worker.save(new Person("Aleksander","1234"));
-		Shop.Office.Persons.Person person =new Person("Marek");
+		HibernatePersonManager mgr = new HibernatePersonManager(session);
+		mgr.save(new Person("Adam","1234"));
+		mgr.save(new Person("Michal","1234"));
+		mgr.save(new Person("Paweł","1234"));
+		Person person =new Person("Adam");
 		person.setId(10);
-		worker.delete(person);
+		mgr.delete(person);
 		//session.getTransaction().commit();
-		for(Person p: worker.getAll())
+		for(Person p: mgr.getAll())
 		{
 			System.out.println(p.getName());
 		}

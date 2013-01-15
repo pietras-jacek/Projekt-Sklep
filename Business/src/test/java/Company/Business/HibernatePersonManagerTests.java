@@ -12,7 +12,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import registerOffice.management.HibernatePersonManager;
+import Shop.Office.Administration.HibernatePersonManager;
 
 import Shop.Office.Persons.Person;
 
@@ -46,9 +46,9 @@ public class HibernatePersonManagerTests {
 
 	@Test
 	public void testGet() {
-		registerOffice.businessObjects.persons.Person result = worker.get(1);
-		registerOffice.businessObjects.persons.Person result2 = worker.get(1);
-		registerOffice.businessObjects.persons.Person result3 = worker.get(100);
+		Shop.Office.Persons.Person result = worker.get(1);
+		Shop.Office.Persons.Person result2 = worker.get(1);
+		Shop.Office.Persons.Person result3 = worker.get(100);
 		assertNotNull("brak wyników",result);
 		assertEquals("zle ustawienie Id",result.getId(),1);
 
@@ -64,7 +64,7 @@ public class HibernatePersonManagerTests {
 
 	@Test
 	public void testGetAll() {
-		List<registerOffice.businessObjects.persons.Person> results = worker.getAll();
+		List<Shop.Office.Persons.Person> results = worker.getAll();
 
 		assertNotNull("Lista jest nullem", results);
 		assertTrue("ilosc elementów w liscie sie nie zgadza",
@@ -75,7 +75,7 @@ public class HibernatePersonManagerTests {
 	public void testSave() {
 		Person p = new Person("Tomasz","2314","Morska");
 		
-		registerOffice.businessObjects.persons.Person result = worker.get(7);
+		Shop.Office.Persons.Person result = worker.get(7);
 		assertNotNull("nie zapisano do bazy",result);
 		assertEquals("zle ustawienie imion",result.getName(), "Tomasz");
 		assertEquals("zle ustawienie peselu",result.getPesel(), "2314");
@@ -84,10 +84,10 @@ public class HibernatePersonManagerTests {
 
 	@Test
 	public void testDelete() {
-		registerOffice.businessObjects.persons.Person p = worker.get(1);
+		Shop.Office.Persons.Person p = worker.get(1);
 		boolean deleted = worker.delete(p);
 
-		registerOffice.businessObjects.persons.Person result = worker.get(1);
+		Shop.Office.Persons.Person result = worker.get(1);
 		assertTrue("nie skasowano",deleted);
 		assertTrue("ilosc danych w bazie nie zmalala",
 				worker.getAll().size()==5);
