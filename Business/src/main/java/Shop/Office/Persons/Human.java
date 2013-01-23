@@ -17,6 +17,7 @@ public class Human {
 	private boolean married;
 	private int numOfChildren;
 	private String Pesel;
+	private String Name;
 	
 	@Size(min = 2, max = 20)
 	public String getFirstName() {
@@ -72,12 +73,22 @@ public class Human {
 		this.married = married;
 	}
 	
-	public void setPesel() {
+	public void setPesel(String Pesel) {
 		this.Pesel = Pesel;
 	}
 	public String getPesel() {
 		return Pesel;
 
 	}
+	public void setName(String Name) {
+		this.Name = Name;
 	}
+	public String getName() {
+		return Name;
+
+	}
+
+
+
+}
 

@@ -14,6 +14,10 @@ public class AdminManager {
 	public void addPerson(Human person) {
 		Human newHuman = new Human();
 
+		newHuman.setPesel(person.getPesel());
+		newHuman.setName(person.getName());
+		
+		
 		newHuman.setFirstName(person.getFirstName());
 		newHuman.setZipCode(person.getZipCode());
 		newHuman.setPin(person.getPin());
@@ -25,11 +29,11 @@ public class AdminManager {
 		db.add(newHuman);
 	}
 
-	// Removes the person with given PIN
+	// Removes the person with given Pesel
 	public void deletePerson(Human person) {
 		Human personToRemove = null;
 		for (Human p : db) {
-			if (person.getPin().equals(p.getPin())) {
+			if (person.getPesel().equals(p.getPesel())) {
 				personToRemove = p;
 				break;
 			}
