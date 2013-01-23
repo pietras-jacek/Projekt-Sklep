@@ -16,6 +16,7 @@ public class Human {
 	private double weight;
 	private boolean married;
 	private int numOfChildren;
+	private String Pesel;
 	
 	@Size(min = 2, max = 20)
 	public String getFirstName() {
@@ -71,4 +72,12 @@ public class Human {
 		this.married = married;
 	}
 	
-}
+	public void setPesel() {
+		this.Pesel = Pesel;
+	}
+	public String getPesel() {
+		return Pesel;
+
+	}
+	}
+

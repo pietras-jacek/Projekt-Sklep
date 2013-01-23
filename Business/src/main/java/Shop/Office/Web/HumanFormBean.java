@@ -20,7 +20,7 @@ import Shop.Office.Persons.Human;
 import Shop.Office.Administration.AdminManager;
 
 @SessionScoped
-@Named("personBean")
+@Named("HumanBean")
 public class HumanFormBean implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -64,12 +64,12 @@ public class HumanFormBean implements Serializable {
 	public void uniquePin(FacesContext context, UIComponent component,
 			Object value) {
 
-		String pin = (String) value;
+		String pesel = (String) value;
 
 		for (Human person : pm.getAllPersons()) {
-			if (person.getPin().equalsIgnoreCase(pin)) {
+			if (person.getPesel().equalsIgnoreCase(pesel)) {
 				FacesMessage message = new FacesMessage(
-						"Person with this PIN already exists in database");
+						"Osoba z tym nr. Pesel już istnieje w bazie danych");
 				message.setSeverity(FacesMessage.SEVERITY_ERROR);
 				throw new ValidatorException(message);
 			}
